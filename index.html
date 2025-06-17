@@ -422,8 +422,8 @@
             </button>
           </div>
         </div>
-  <!-- Teachers Information -->
-        <div
+<!-- Teachers Information -->
+<div
           id="teachers"
           class="feature-card bg-white rounded-lg shadow-md p-6 border-t-2 border-gold"
         >
@@ -445,115 +445,503 @@
               />
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-3 text-charcoal">
-            Faculty Directory
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Find contact details for all faculty members by department.
-          </p>
+  <h3 class="text-xl font-semibold mb-3 text-charcoal">
+    Faculty Directory
+  </h3>
+  <p class="text-gray-600 mb-4">
+    Find contact details for all faculty members by department.
+  </p>
 
-          <div class="space-y-3">
-            <div class="border border-gray-200 rounded-md overflow-hidden">
-              <div
-                class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
-                onclick="toggleDept('cse')"
-              >
-                <span>Computer Science</span>
-                <span class="text-gold">+</span>
-              </div>
-              <div id="cse" class="hidden p-4 space-y-4">
-                <div
-                  class="teacher-card flex items-center p-2 border-b border-gray-100"
-                >
-                  <div
-                    class="w-12 h-12 bg-brick/10 rounded-full mr-3 flex-shrink-0 overflow-hidden flex items-center justify-center"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-8 w-8 text-brick/60"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <p class="font-medium">Dr. Sarah Johnson</p>
-                    <p class="text-sm text-gray-600">sarah.j@vuhub.edu</p>
-                    <p class="text-sm text-gray-600">+1 (555) 123-4567</p>
-                  </div>
-                </div>
-                <div class="teacher-card flex items-center p-2">
-                  <div
-                    class="w-12 h-12 bg-brick/10 rounded-full mr-3 flex-shrink-0 overflow-hidden flex items-center justify-center"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-8 w-8 text-brick/60"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <p class="font-medium">Prof. Michael Chen</p>
-                    <p class="text-sm text-gray-600">m.chen@vuhub.edu</p>
-                    <p class="text-sm text-gray-600">+1 (555) 987-6543</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-<div class="border border-gray-200 rounded-md overflow-hidden">
-              <div
-                class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
-                onclick="toggleDept('eee')"
-              >
-                <span>Electrical Engineering</span>
-                <span class="text-gold">+</span>
-              </div>
-              <div id="eee" class="hidden p-4">
-                <div class="teacher-card flex items-center p-2">
-                  <div
-                    class="w-12 h-12 bg-brick/10 rounded-full mr-3 flex-shrink-0 overflow-hidden flex items-center justify-center"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-8 w-8 text-brick/60"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <p class="font-medium">Dr. Robert Williams</p>
-                    <p class="text-sm text-gray-600">r.williams@vuhub.edu</p>
-                    <p class="text-sm text-gray-600">+1 (555) 234-5678</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+  <div class="dept-container max-h-64 overflow-y-auto pr-1 space-y-3">
+    <div class="border border-gray-200 rounded-md overflow-hidden">
+      <div
+        class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
+        onclick="openFacultyModal('CSE')"
+      >
+        <span>Computer Science</span>
+        <span class="text-gold">+</span>
+      </div>
+    </div>
+    
+    <div class="border border-gray-200 rounded-md overflow-hidden">
+      <div
+        class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
+        onclick="openFacultyModal('EEE')"
+      >
+        <span>Electrical Engineering</span>
+        <span class="text-gold">+</span>
+      </div>
+    </div>
+    
+    <div class="border border-gray-200 rounded-md overflow-hidden">
+      <div
+        class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
+        onclick="openFacultyModal('NFE')"
+      >
+        <span>Nutrition & Food Engineering</span>
+        <span class="text-gold">+</span>
+      </div>
+    </div>
+    
+    <div class="border border-gray-200 rounded-md overflow-hidden">
+      <div
+        class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
+        onclick="openFacultyModal('PHARMACY')"
+      >
+        <span>Pharmacy</span>
+        <span class="text-gold">+</span>
+      </div>
+    </div>
+    
+    <div class="border border-gray-200 rounded-md overflow-hidden">
+      <div
+        class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
+        onclick="openFacultyModal('ENGLISH')"
+      >
+        <span>English</span>
+        <span class="text-gold">+</span>
+      </div>
+    </div>
+    
+    <div class="border border-gray-200 rounded-md overflow-hidden">
+      <div
+        class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
+        onclick="openFacultyModal('BBA')"
+      >
+        <span>Business Administration</span>
+        <span class="text-gold">+</span>
+      </div>
+    </div>
+    
+    <div class="border border-gray-200 rounded-md overflow-hidden">
+      <div
+        class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
+        onclick="openFacultyModal('ECONOMICS')"
+      >
+        <span>Economics</span>
+        <span class="text-gold">+</span>
+      </div>
+    </div>
+    
+    <div class="border border-gray-200 rounded-md overflow-hidden">
+      <div
+        class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
+        onclick="openFacultyModal('JCMS')"
+      >
+        <span>Journalism & Media Studies</span>
+        <span class="text-gold">+</span>
+      </div>
+    </div>
+    
+    <div class="border border-gray-200 rounded-md overflow-hidden">
+      <div
+        class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
+        onclick="openFacultyModal('POLITICAL SCIENCE')"
+      >
+        <span>Political Science</span>
+        <span class="text-gold">+</span>
+      </div>
+    </div>
+    
+    <div class="border border-gray-200 rounded-md overflow-hidden">
+      <div
+        class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
+        onclick="openFacultyModal('SOCIOLOGY')"
+      >
+        <span>Sociology</span>
+        <span class="text-gold">+</span>
+      </div>
+    </div>
+    
+    <div class="border border-gray-200 rounded-md overflow-hidden">
+      <div
+        class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
+        onclick="openFacultyModal('LAW')"
+      >
+        <span>Law</span>
+        <span class="text-gold">+</span>
+      </div>
+    </div>
+  </div>
 
-            <button
-              class="w-full bg-gold hover:bg-gold/80 text-charcoal font-medium py-2 px-4 rounded-md transition duration-300"
-            >
-              View All Faculty
-            </button>
+  
+</div>
+
+<!-- Faculty Modals -->
+<div id="facultyModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="facultyDeptTitle" class="text-2xl font-bold">Department Faculty</h2>
+      <span class="close-modal" onclick="closeFacultyModal()">&times;</span>
+    </div>
+    <div class="modal-body">
+      <!-- CSE Faculty -->
+      <div id="CSE-faculty" class="faculty-list hidden">
+        <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
+          <h3 class="text-xl font-bold">Arifa Ferdousi</h3>
+          <p class="text-lg font-medium text-maroon">Associate Professor</p>
+          <hr class="my-3">
+          <div class="flex items-start gap-3 mb-2">
+            <svg class="w-5 h-5 mt-1 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+            </svg>
+            <span>M.Sc. in ICE from Information And Communication Engineering, University of Rajshahi</span>
+          </div>
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            <span>arifa@vu.edu.bd</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            <span>+880 1234-567890</span>
           </div>
         </div>
+        
+        <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
+          <h3 class="text-xl font-bold">Mohammad Rahman</h3>
+          <p class="text-lg font-medium text-maroon">Assistant Professor</p>
+          <hr class="my-3">
+          <div class="flex items-start gap-3 mb-2">
+            <svg class="w-5 h-5 mt-1 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+            </svg>
+            <span>Ph.D. in Computer Science, Bangladesh University of Engineering and Technology</span>
+          </div>
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            <span>rahman@vu.edu.bd</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            <span>+880 1712-345678</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- EEE Faculty -->
+      <div id="EEE-faculty" class="faculty-list hidden">
+        <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
+          <h3 class="text-xl font-bold">Nasrin Akter</h3>
+          <p class="text-lg font-medium text-maroon">Professor</p>
+          <hr class="my-3">
+          <div class="flex items-start gap-3 mb-2">
+            <svg class="w-5 h-5 mt-1 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+            </svg>
+            <span>Ph.D. in Electrical Engineering, University of Dhaka</span>
+          </div>
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            <span>nasrin@vu.edu.bd</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            <span>+880 1819-123456</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- NFE Faculty -->
+      <div id="NFE-faculty" class="faculty-list hidden">
+        <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
+          <h3 class="text-xl font-bold">Kamal Hossain</h3>
+          <p class="text-lg font-medium text-maroon">Associate Professor</p>
+          <hr class="my-3">
+          <div class="flex items-start gap-3 mb-2">
+            <svg class="w-5 h-5 mt-1 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+            </svg>
+            <span>Ph.D. in Nutrition, University of Dhaka</span>
+          </div>
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            <span>kamal@vu.edu.bd</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            <span>+880 1671-234567</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- PHARMACY Faculty -->
+      <div id="PHARMACY-faculty" class="faculty-list hidden">
+        <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
+          <h3 class="text-xl font-bold">Fatema Begum</h3>
+          <p class="text-lg font-medium text-maroon">Professor</p>
+          <hr class="my-3">
+          <div class="flex items-start gap-3 mb-2">
+            <svg class="w-5 h-5 mt-1 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+            </svg>
+            <span>Ph.D. in Pharmaceutical Sciences, University of Dhaka</span>
+          </div>
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            <span>fatema@vu.edu.bd</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            <span>+880 1552-345678</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- ENGLISH Faculty -->
+      <div id="ENGLISH-faculty" class="faculty-list hidden">
+        <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
+          <h3 class="text-xl font-bold">Tahmina Islam</h3>
+          <p class="text-lg font-medium text-maroon">Associate Professor</p>
+          <hr class="my-3">
+          <div class="flex items-start gap-3 mb-2">
+            <svg class="w-5 h-5 mt-1 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+            </svg>
+            <span>Ph.D. in English Literature, University of Dhaka</span>
+          </div>
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            <span>tahmina@vu.edu.bd</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            <span>+880 1912-345678</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- BBA Faculty -->
+      <div id="BBA-faculty" class="faculty-list hidden">
+        <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
+          <h3 class="text-xl font-bold">Rafiqul Islam</h3>
+          <p class="text-lg font-medium text-maroon">Professor</p>
+          <hr class="my-3">
+          <div class="flex items-start gap-3 mb-2">
+            <svg class="w-5 h-5 mt-1 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174a1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+            </svg>
+            <span>Ph.D. in Business Administration, University of Dhaka</span>
+          </div>
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            <span>rafiqul@vu.edu.bd</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            <span>+880 1712-987654</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- ECONOMICS Faculty -->
+      <div id="ECONOMICS-faculty" class="faculty-list hidden">
+        <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
+          <h3 class="text-xl font-bold">Shamsul Alam</h3>
+          <p class="text-lg font-medium text-maroon">Associate Professor</p>
+          <hr class="my-3">
+          <div class="flex items-start gap-3 mb-2">
+            <svg class="w-5 h-5 mt-1 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174a1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+            </svg>
+            <span>Ph.D. in Economics, University of Rajshahi</span>
+          </div>
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            <span>shamsul@vu.edu.bd</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            <span>+880 1812-345678</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- JCMS Faculty -->
+      <div id="JCMS-faculty" class="faculty-list hidden">
+        <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
+          <h3 class="text-xl font-bold">Nusrat Jahan</h3>
+          <p class="text-lg font-medium text-maroon">Assistant Professor</p>
+          <hr class="my-3">
+          <div class="flex items-start gap-3 mb-2">
+            <svg class="w-5 h-5 mt-1 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174a1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+            </svg>
+            <span>M.Phil in Journalism, University of Dhaka</span>
+          </div>
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            <span>nusrat@vu.edu.bd</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            <span>+880 1612-345678</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- POLITICAL SCIENCE Faculty -->
+      <div id="POLITICAL SCIENCE-faculty" class="faculty-list hidden">
+        <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
+          <h3 class="text-xl font-bold">Abdul Karim</h3>
+          <p class="text-lg font-medium text-maroon">Professor</p>
+          <hr class="my-3">
+          <div class="flex items-start gap-3 mb-2">
+            <svg class="w-5 h-5 mt-1 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174a1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+            </svg>
+            <span>Ph.D. in Political Science, University of Dhaka</span>
+          </div>
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            <span>karim@vu.edu.bd</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            <span>+880 1512-345678</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- SOCIOLOGY Faculty -->
+      <div id="SOCIOLOGY-faculty" class="faculty-list hidden">
+        <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
+          <h3 class="text-xl font-bold">Sabina Yasmin</h3>
+          <p class="text-lg font-medium text-maroon">Associate Professor</p>
+          <hr class="my-3">
+          <div class="flex items-start gap-3 mb-2">
+            <svg class="w-5 h-5 mt-1 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174a1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+            </svg>
+            <span>Ph.D. in Sociology, University of Rajshahi</span>
+          </div>
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            <span>sabina@vu.edu.bd</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            <span>+880 1912-876543</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- LAW Faculty -->
+      <div id="LAW-faculty" class="faculty-list hidden">
+        <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
+          <h3 class="text-xl font-bold">Mahfuzur Rahman</h3>
+          <p class="text-lg font-medium text-maroon">Professor</p>
+          <hr class="my-3">
+          <div class="flex items-start gap-3 mb-2">
+            <svg class="w-5 h-5 mt-1 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174a1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+            </svg>
+            <span>LL.D., University of Dhaka</span>
+          </div>
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            <span>mahfuz@vu.edu.bd</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-maroon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            <span>+880 1712-987654</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- All Faculty (for View All button) -->
+      <div id="ALL-faculty" class="faculty-list hidden">
+        <h3 class="text-xl font-bold mb-4">All Faculty Members</h3>
+        
+        <!-- Department sections -->
+        <div class="mb-6">
+          <h4 class="text-lg font-semibold text-maroon mb-3">Computer Science Department</h4>
+          <div class="faculty-card bg-white rounded-lg p-4 mb-3 shadow-sm">
+            <h5 class="text-md font-bold">Arifa Ferdousi</h5>
+            <p class="text-sm text-maroon">Associate Professor</p>
+            <p class="text-sm">arifa@vu.edu.bd | +880 1234-567890</p>
+          </div>
+          <div class="faculty-card bg-white rounded-lg p-4 mb-3 shadow-sm">
+            <h5 class="text-md font-bold">Mohammad Rahman</h5>
+            <p class="text-sm text-maroon">Assistant Professor</p>
+            <p class="text-sm">rahman@vu.edu.bd | +880 1712-345678</p>
+          </div>
+        </div>
+        
+        <div class="mb-6">
+          <h4 class="text-lg font-semibold text-maroon mb-3">Electrical Engineering Department</h4>
+          <div class="faculty-card bg-white rounded-lg p-4 mb-3 shadow-sm">
+            <h5 class="text-md font-bold">Nasrin Akter</h5>
+            <p class="text-sm text-maroon">Professor</p>
+            <p class="text-sm">nasrin@vu.edu.bd | +880 1819-123456</p>
+          </div>
+        </div>
+        
+        <!-- Add more departments as needed -->
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Canteen Information -->
         <div
           id="canteen"
@@ -631,11 +1019,55 @@
             </table>
           </div>
           <button
-            class="w-full mt-4 bg-gold hover:bg-gold/80 text-charcoal font-medium py-2 px-4 rounded-md transition duration-300"
-          >
-            View Full Menu
-          </button>
+  class="w-full mt-4 bg-gold hover:bg-gold/80 text-charcoal font-medium py-2 px-4 rounded-md transition duration-300"
+  onclick="openCanteenModal()"
+>
+  View Full Menu
+</button>
         </div>
+
+        <!-- HTML: Canteen Menu Modal -->
+<!-- Canteen Menu Modal -->
+<div id="canteenModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="text-2xl font-bold">University Canteen Menu</h2>
+      <span class="close-modal" onclick="closeCanteenModal()">&times;</span>
+    </div>
+    <div class="modal-body">
+      <div class="bg-white rounded-lg p-6">
+        <div class="menu-item-modal">
+          <div class="font-medium">Coffee</div>
+          <div class="font-semibold">$1.50</div>
+        </div>
+        <div class="menu-item-modal">
+          <div class="font-medium">Tea</div>
+          <div class="font-semibold">$1.00</div>
+        </div>
+        <div class="menu-item-modal">
+          <div class="font-medium">Sandwich</div>
+          <div class="font-semibold">$3.50</div>
+        </div>
+        <div class="menu-item-modal">
+          <div class="font-medium">Burger</div>
+          <div class="font-semibold">$4.00</div>
+        </div>
+        <div class="menu-item-modal">
+          <div class="font-medium">Pizza Slice</div>
+          <div class="font-semibold">$2.50</div>
+        </div>
+        <div class="menu-item-modal">
+          <div class="font-medium">Salad</div>
+          <div class="font-semibold">$3.75</div>
+        </div>
+        <div class="menu-item-modal">
+          <div class="font-medium">Fruit Cup</div>
+          <div class="font-semibold">$2.25</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   <!-- Blood Donor Section - UPDATED -->
 <div id="blood" class="feature-card bg-white rounded-lg shadow-md p-6 border-t-2 border-gold">
   <div class="bg-brick/10 rounded-full w-16 h-16 flex items-center justify-center mb-4">

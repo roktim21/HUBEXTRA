@@ -1,3 +1,50 @@
+function openFacultyModal(department) {
+  // Hide all faculty lists
+  const facultyLists = document.querySelectorAll(".faculty-list");
+  facultyLists.forEach((list) => {
+    list.classList.add("hidden");
+  });
+
+  // Show the selected department's faculty list
+  document.getElementById(department + "-faculty").classList.remove("hidden");
+
+  // Update the modal title
+  document.getElementById("facultyDeptTitle").textContent =
+    department + " Department Faculty";
+
+  // Show the modal
+  document.getElementById("facultyModal").style.display = "block";
+  document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+}
+
+function closeFacultyModal() {
+  document.getElementById("facultyModal").style.display = "none";
+  document.body.style.overflow = "auto"; // Re-enable scrolling
+}
+
+window.onclick = function (event) {
+  const teamModal = document.getElementById("teamModal");
+  const bloodModal = document.getElementById("bloodDonorModal");
+  const canteenModal = document.getElementById("canteenModal");
+  const facultyModal = document.getElementById("facultyModal");
+
+  if (event.target == teamModal) {
+    closeTeamModal();
+  }
+
+  if (event.target == bloodModal) {
+    closeBloodModal();
+  }
+
+  if (event.target == canteenModal) {
+    closeCanteenModal();
+  }
+
+  if (event.target == facultyModal) {
+    closeFacultyModal();
+  }
+};
+
 function toggleDept(id) {
   const element = document.getElementById(id);
   if (element.classList.contains("hidden")) {
@@ -102,13 +149,16 @@ function closeTeamModal() {
   document.body.style.overflow = "auto"; // Re-enable scrolling
 }
 
-// Close modal when clicking outside of it
-window.onclick = function (event) {
-  const modal = document.getElementById("teamModal");
-  if (event.target == modal) {
-    closeTeamModal();
-  }
-};
+// Canteen Menu Modal Functions
+function openCanteenModal() {
+  document.getElementById("canteenModal").style.display = "block";
+  document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+}
+
+function closeCanteenModal() {
+  document.getElementById("canteenModal").style.display = "none";
+  document.body.style.overflow = "auto"; // Re-enable scrolling
+}
 
 // Blood Donor Modal Functions
 function openBloodModal(bloodType) {
@@ -247,17 +297,3 @@ function closeBloodModal() {
   document.getElementById("bloodDonorModal").style.display = "none";
   document.body.style.overflow = "auto"; // Re-enable scrolling
 }
-
-// Update the window.onclick function to include the blood modal
-window.onclick = function (event) {
-  const teamModal = document.getElementById("teamModal");
-  const bloodModal = document.getElementById("bloodDonorModal");
-
-  if (event.target == teamModal) {
-    closeTeamModal();
-  }
-
-  if (event.target == bloodModal) {
-    closeBloodModal();
-  }
-};
