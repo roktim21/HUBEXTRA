@@ -16,6 +16,7 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
 .feature-card {
   transition: all 0.3s ease;
 }
@@ -83,57 +84,158 @@ body {
   padding: 30px;
 }
 
- /* Custom scrollbar for the department container */
-  .dept-container::-webkit-scrollbar {
-    width: 6px;
-  }
-  
-  .dept-container::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-  }
-  
-  .dept-container::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-  }
-  
-  .dept-container::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-  
-  /* Faculty list scrollbar */
-  .faculty-list {
-    max-height: 70vh;
-    overflow-y: auto;
-  }
-  
-  .faculty-list::-webkit-scrollbar {
-    width: 6px;
-  }
-  
-  .faculty-list::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-  }
-  
-  .faculty-list::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-  }
-  
-  .faculty-list::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-  
-  .faculty-card {
-    transition: all 0.3s ease;
-  }
-  
-  .faculty-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  }
+/* Custom scrollbar for canteen menu */
+.menu-items {
+  max-height: 200px; /* Reduced height to ensure scrollbar appears */
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.menu-items::-webkit-scrollbar {
+  width: 6px;
+}
+
+.menu-items::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.menu-items::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.menu-items::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Fix table header to stay in place */
+.menu-items table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.menu-items thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.menu-items thead tr {
+  background-color: #f8f8f8;
+}
+
+/* Custom scrollbar for modal menu */
+.modal-menu-container {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.modal-menu-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-menu-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.modal-menu-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.modal-menu-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Menu item styling */
+.menu-item-modal {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-item-modal:last-child {
+  border-bottom: none;
+}
+
+/* Custom scrollbar for the department container */
+.dept-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dept-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.dept-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.dept-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Faculty list scrollbar */
+.faculty-list {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.faculty-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.faculty-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.faculty-list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.faculty-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.faculty-card {
+  transition: all 0.3s ease;
+}
+
+.faculty-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Faculty list scrollbar modal */
+.faculty-list {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.faculty-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.faculty-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.faculty-list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.faculty-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
 /* Menu Modal Styles */
 .menu-item-modal {

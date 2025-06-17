@@ -35,7 +35,7 @@
   </head>
   <body class="bg-offwhite text-charcoal">
     <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-40">
+    <header class="bg-offwhite shadow-md sticky top-0 z-40">
       <div
         class="container mx-auto px-4 py-3 flex justify-between items-center"
       >
@@ -62,55 +62,100 @@
           </div>
         </div>
 
-        <!-- Navigation Menu -->
-        <div class="dropdown">
-          <button
-            class="p-2 rounded-full hover:bg-offwhite transition duration-300"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
-              />
-            </svg>
-          </button>
-          <div class="dropdown-content bg-white shadow-lg rounded-lg py-2">
-            <a
-              href="#routine"
-              class="block px-4 py-2 hover:bg-offwhite transition duration-300"
-              >Routine</a
-            >
-            <a
-              href="#teachers"
-              class="block px-4 py-2 hover:bg-offwhite transition duration-300"
-              >Teachers Information</a
-            >
-            <a
-              href="#canteen"
-              class="block px-4 py-2 hover:bg-offwhite transition duration-300"
-              >Canteen Information</a
-            >
-            <a
-              href="#blood"
-              class="block px-4 py-2 hover:bg-offwhite transition duration-300"
-              >Blood Donor</a
-            >
-            <a
-              href="#about"
-              class="block px-4 py-2 hover:bg-offwhite transition duration-300"
-              >Developed by</a
-            >
-          </div>
-        </div>
-      </div>
+<!-- Navigation Menu -->
+<div class="block lg:hidden relative">
+  <button
+    class="p-2 rounded-full hover:bg-offwhite transition duration-300"
+    onclick="toggleDropdown()"
+    id="dropdownToggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="dropdownMenu"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+      />
+    </svg>
+  </button>
+
+  <div
+    id="dropdownMenu"
+    class="hidden absolute right-0 mt-2 w-56 bg-offwhite shadow-lg rounded-lg py-2 z-50"
+  >
+    <a
+      href="#routine"
+      class="dropdown-item block px-4 py-2 transition duration-300"
+      >Routine</a
+    >
+    <a
+      href="#teachers"
+      class="dropdown-item block px-4 py-2 transition duration-300"
+      >Teachers Information</a
+    >
+    <a
+      href="#canteen"
+      class="dropdown-item block px-4 py-2 transition duration-300"
+      >Canteen Information</a
+    >
+    <a
+      href="#blood"
+      class="dropdown-item block px-4 py-2 transition duration-300"
+      >Blood Donor</a
+    >
+    <p
+      class="dropdown-item block px-4 py-2 team-nerds font-medium text-lg cursor-pointer transition duration-300"
+      onclick="openTeamModal()"
+    >
+      Team Nerds
+    </p>
+  </div>
+</div>
+
+
+<!-- Desktop menu (visible on large screens) -->
+<div class="hidden lg:flex gap-6 items-center">
+  <a
+    href="#routine"
+    class="hover:bg-offwhite px-4 py-2 rounded transition duration-300 border border-transparent hover:border-brick hover:shadow-[0_0_10px_2px_rgba(178,34,34,0.6)] hover:text-brick"
+  >
+    Routine
+  </a>
+  <a
+    href="#teachers"
+    class="hover:bg-offwhite px-4 py-2 rounded transition duration-300 border border-transparent hover:border-brick hover:shadow-[0_0_10px_2px_rgba(178,34,34,0.6)] hover:text-brick"
+  >
+    Teachers Information
+  </a>
+  <a
+    href="#canteen"
+    class="hover:bg-offwhite px-4 py-2 rounded transition duration-300 border border-transparent hover:border-brick hover:shadow-[0_0_10px_2px_rgba(178,34,34,0.6)] hover:text-brick"
+  >
+    Canteen Information
+  </a>
+  <a
+    href="#blood"
+    class="hover:bg-offwhite px-4 py-2 rounded transition duration-300 border border-transparent hover:border-brick hover:shadow-[0_0_10px_2px_rgba(178,34,34,0.6)] hover:text-brick"
+  >
+    Blood Donor
+  </a>
+  <p
+    class="hover:bg-offwhite px-4 py-2 rounded transition duration-300 team-nerds font-medium text-lg cursor-pointer border border-transparent hover:border-brick hover:shadow-[0_0_10px_2px_rgba(178,34,34,0.6)] hover:text-brick"
+    onclick="openTeamModal()"
+  >
+    Team Nerds
+  </p>
+</div>
+
     </header>
 
     <!-- Hero Section -->
@@ -341,83 +386,99 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Routine Feature -->
-        <div
-          id="routine"
-          class="feature-card bg-white rounded-lg shadow-md p-6 border-t-2 border-gold"
-        >
-          <div class="bg-brick/10 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-  <i class="fa-regular fa-calendar text-brick text-[32px]"></i>
+<!-- Class Routine -->
+<div
+  id="routine"
+  class="feature-card bg-offwhite/10 rounded-lg shadow-md p-6 border-t-2 border-gold backdrop-blur-sm"
+>
+  <div class="bg-brick/10 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+    <i class="fa-regular fa-calendar text-brick text-[32px]"></i>
+  </div>
+
+  <h3 class="text-xl font-semibold mb-3 text-charcoal">Class Routine</h3>
+  <p class="text-gray-600 mb-4">
+    Access your class schedules easily with our intuitive routine finder.
+  </p>
+
+  <div class="space-y-3">
+    <div>
+      <label class="block text-sm font-medium text-gray-700 mb-1">Department</label>
+      <select
+        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold bg-offwhite"
+      >
+        <option>Computer Science & Engineering</option>
+        <option>Electrical & Electronics Engineering</option>
+        <option>Business Administration</option>
+        <option>Nutrition & Food Engineering</option>
+        <option>Pharmacy</option>
+        <option>English</option>
+        <option>Economics</option>
+        <option>Journalism & Media Studies</option>
+        <option>Political Science</option>
+        <option>Sociology</option>
+        <option>Law</option>
+      </select>
+    </div>
+    
+    <div>
+      <label class="block text-sm font-medium text-gray-700 mb-1">Semester</label>
+      <select
+        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold bg-offwhite"
+      >
+        <option>1st Semester</option>
+        <option>2nd Semester</option>
+        <option>3rd Semester</option>
+        <option>4th Semester</option>
+        <option>5th Semester</option>
+        <option>6th Semester</option>
+        <option>7th Semester</option>
+        <option>8th Semester</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium text-gray-700 mb-1">Section</label>
+      <select
+        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold bg-offwhite"
+      >
+        <option>Section A</option>
+        <option>Section B</option>
+        <option>Section C</option>
+        <option>Section D</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium text-gray-700 mb-1">Day</label>
+      <select
+        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold bg-offwhite"
+      >
+        <option>Saturday</option>
+        <option>Sunday</option>
+        <option>Monday</option>
+        <option>Tuesday</option>
+        <option>Wednesday</option>
+        <option>Thursday</option>
+      </select>
+    </div>
+
+    <button
+      class="w-full bg-gold hover:bg-gold/80 text-charcoal font-medium py-2 px-4 rounded-md transition duration-300"
+    >
+      View Routine
+    </button>
+  </div>
 </div>
 
 
-          <h3 class="text-xl font-semibold mb-3 text-charcoal">
-            Class Routine
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Access your class schedules easily with our intuitive routine
-            finder.
-          </p>
-
-          <div class="space-y-3">
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1"
-                >Department</label
-              >
-              <select
-                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold"
-              >
-                <option>Computer Science</option>
-                <option>Electrical Engineering</option>
-                <option>Business Administration</option>
-                <option>Architecture</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1"
-                >Semester</label
-              >
-              <select
-                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold"
-              >
-                <option>1st Semester</option>
-                <option>2nd Semester</option>
-                <option>3rd Semester</option>
-                <option>4th Semester</option>
-                <option>5th Semester</option>
-                <option>6th Semester</option>
-                <option>7th Semester</option>
-                <option>8th Semester</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1"
-                >Section</label
-              >
-              <select
-                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold"
-              >
-                <option>Section A</option>
-                <option>Section B</option>
-                <option>Section C</option>
-                <option>Section D</option>
-              </select>
-            </div>
-            <button
-              class="w-full bg-gold hover:bg-gold/80 text-charcoal font-medium py-2 px-4 rounded-md transition duration-300"
-            >
-              View Routine
-            </button>
-          </div>
-        </div>
 <!-- Teachers Information -->
 <div
-          id="teachers"
-          class="feature-card bg-white rounded-lg shadow-md p-6 border-t-2 border-gold"
-        >
-         <div class="bg-brick/10 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-  <i class="fa-solid fa-chalkboard-user text-brick text-2xl"></i>
-</div>
-
+  id="teachers"
+  class="feature-card bg-offwhite/10 rounded-lg shadow-md p-6 border-t-2 border-gold backdrop-blur-sm"
+>
+  <div class="bg-brick/10 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+    <i class="fa-solid fa-chalkboard-user text-brick text-2xl"></i>
+  </div>
 
   <h3 class="text-xl font-semibold mb-3 text-charcoal">
     Faculty Directory
@@ -436,7 +497,7 @@
         <span class="text-gold">+</span>
       </div>
     </div>
-    
+
     <div class="border border-gray-200 rounded-md overflow-hidden">
       <div
         class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
@@ -446,7 +507,7 @@
         <span class="text-gold">+</span>
       </div>
     </div>
-    
+
     <div class="border border-gray-200 rounded-md overflow-hidden">
       <div
         class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
@@ -456,7 +517,7 @@
         <span class="text-gold">+</span>
       </div>
     </div>
-    
+
     <div class="border border-gray-200 rounded-md overflow-hidden">
       <div
         class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
@@ -466,7 +527,7 @@
         <span class="text-gold">+</span>
       </div>
     </div>
-    
+
     <div class="border border-gray-200 rounded-md overflow-hidden">
       <div
         class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
@@ -476,7 +537,7 @@
         <span class="text-gold">+</span>
       </div>
     </div>
-    
+
     <div class="border border-gray-200 rounded-md overflow-hidden">
       <div
         class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
@@ -486,7 +547,7 @@
         <span class="text-gold">+</span>
       </div>
     </div>
-    
+
     <div class="border border-gray-200 rounded-md overflow-hidden">
       <div
         class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
@@ -496,7 +557,7 @@
         <span class="text-gold">+</span>
       </div>
     </div>
-    
+
     <div class="border border-gray-200 rounded-md overflow-hidden">
       <div
         class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
@@ -506,7 +567,7 @@
         <span class="text-gold">+</span>
       </div>
     </div>
-    
+
     <div class="border border-gray-200 rounded-md overflow-hidden">
       <div
         class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
@@ -516,7 +577,7 @@
         <span class="text-gold">+</span>
       </div>
     </div>
-    
+
     <div class="border border-gray-200 rounded-md overflow-hidden">
       <div
         class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
@@ -526,7 +587,7 @@
         <span class="text-gold">+</span>
       </div>
     </div>
-    
+
     <div class="border border-gray-200 rounded-md overflow-hidden">
       <div
         class="bg-offwhite px-4 py-2 font-medium cursor-pointer flex justify-between items-center"
@@ -538,7 +599,14 @@
     </div>
   </div>
 
-  
+  <div class="mt-3">
+    <button
+      onclick="openAllFacultyModal()"
+      class="w-full bg-gold hover:bg-gold/80 text-charcoal font-medium py-2 px-4 rounded-md transition duration-300"
+    >
+      View All Faculty
+    </button>
+  </div>
 </div>
 
 <!-- Faculty Modals -->
@@ -798,80 +866,107 @@
           </div>
         </div>
       </div>
-      
+       <!-- All Faculty (for View All button) -->
+<div id="ALL-faculty" class="faculty-list hidden">
+  <h3 class="text-xl font-bold mb-4">All Faculty Members</h3>
+  
+  <!-- Department sections -->
+  <div class="mb-6">
+    <h4 class="text-lg font-semibold text-maroon mb-3">Computer Science Department</h4>
+    <div class="faculty-card bg-white rounded-lg p-4 mb-3 shadow-sm">
+      <h5 class="text-md font-bold">Arifa Ferdousi</h5>
+      <p class="text-sm text-maroon">Associate Professor</p>
+      <p class="text-sm">arifa@vu.edu.bd | +. </p>
+    </div>
+    <div class="faculty-card bg-white rounded-lg p-4 mb-3 shadow-sm">
+      <h5 class="text-md font-bold">Mohammad Rahman</h5>
+      <p class="text-sm text-maroon">Assistant Professor</p>
+      <p class="text-sm">rahman@vu.edu.bd | +. </p>
+    </div>
+  </div>
+  
+  <div class="mb-6">
+    <h4 class="text-lg font-semibold text-maroon mb-3">Electrical Engineering Department</h4>
+    <div class="faculty-card bg-white rounded-lg p-4 mb-3 shadow-sm">
+      <h5 class="text-md font-bold">Nasrin Akter</h5>
+      <p class="text-sm text-maroon">Professor</p>
+      <p class="text-sm">nasrin@vu.edu.bd | +. </p>
+    </div>
+  </div>
+  
+  <!-- Add more departments as needed -->
+</div>
     </div>
   </div>
 </div>
 
 <!-- Canteen Information -->
-        <div
-          id="canteen"
-          class="feature-card bg-white rounded-lg shadow-md p-6 border-t-2 border-gold"
-        >
-          <div class="bg-brick/10 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-  <i class="fa-solid fa-utensils text-brick text-[32px]"></i>
+<div
+  id="canteen"
+  class="feature-card bg-offwhite/10 backdrop-blur-sm rounded-lg shadow-md p-6 border-t-2 border-gold"
+>
+  <div class="bg-brick/10 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+    <i class="fa-solid fa-utensils text-brick text-[32px]"></i>
+  </div>
+
+  <h3 class="text-xl font-semibold mb-3 text-charcoal">Canteen Menu</h3>
+  <p class="text-gray-600 mb-4">
+    Check menu items and prices at the university canteen.
+  </p>
+
+  <div class="menu-items">
+    <table class="min-w-full">
+      <thead>
+        <tr class="bg-offwhite">
+          <th class="py-2 px-4 text-left text-sm font-medium text-charcoal">
+            Item
+          </th>
+          <th class="py-2 px-4 text-right text-sm font-medium text-charcoal">
+            Price
+          </th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200">
+        <tr>
+          <td class="py-2 px-4 text-sm">Coffee</td>
+          <td class="py-2 px-4 text-sm text-right">$1.50</td>
+        </tr>
+        <tr>
+          <td class="py-2 px-4 text-sm">Tea</td>
+          <td class="py-2 px-4 text-sm text-right">$1.00</td>
+        </tr>
+        <tr>
+          <td class="py-2 px-4 text-sm">Sandwich</td>
+          <td class="py-2 px-4 text-sm text-right">$3.50</td>
+        </tr>
+        <tr>
+          <td class="py-2 px-4 text-sm">Burger</td>
+          <td class="py-2 px-4 text-sm text-right">$4.00</td>
+        </tr>
+        <tr>
+          <td class="py-2 px-4 text-sm">Pizza Slice</td>
+          <td class="py-2 px-4 text-sm text-right">$2.50</td>
+        </tr>
+        <tr>
+          <td class="py-2 px-4 text-sm">Salad</td>
+          <td class="py-2 px-4 text-sm text-right">$3.75</td>
+        </tr>
+        <tr>
+          <td class="py-2 px-4 text-sm">Fruit Cup</td>
+          <td class="py-2 px-4 text-sm text-right">$2.25</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <button
+    class="w-full mt-4 bg-gold hover:bg-gold/80 text-charcoal font-medium py-2 px-4 rounded-md transition duration-300"
+    onclick="openCanteenModal()"
+  >
+    View Full Menu
+  </button>
 </div>
 
-          <h3 class="text-xl font-semibold mb-3 text-charcoal">Canteen Menu</h3>
-          <p class="text-gray-600 mb-4">
-            Check menu items and prices at the university canteen.
-          </p>
-
-          <div class="overflow-auto max-h-64">
-            <table class="min-w-full">
-              <thead>
-                <tr class="bg-offwhite">
-                  <th
-                    class="py-2 px-4 text-left text-sm font-medium text-charcoal"
-                  >
-                    Item
-                  </th>
-                  <th
-                    class="py-2 px-4 text-right text-sm font-medium text-charcoal"
-                  >
-                    Price
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-gray-200">
-                <tr>
-                  <td class="py-2 px-4 text-sm">Coffee</td>
-                  <td class="py-2 px-4 text-sm text-right">$1.50</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-4 text-sm">Tea</td>
-                  <td class="py-2 px-4 text-sm text-right">$1.00</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-4 text-sm">Sandwich</td>
-                  <td class="py-2 px-4 text-sm text-right">$3.50</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-4 text-sm">Burger</td>
-                  <td class="py-2 px-4 text-sm text-right">$4.00</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-4 text-sm">Pizza Slice</td>
-                  <td class="py-2 px-4 text-sm text-right">$2.50</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-4 text-sm">Salad</td>
-                  <td class="py-2 px-4 text-sm text-right">$3.75</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-4 text-sm">Fruit Cup</td>
-                  <td class="py-2 px-4 text-sm text-right">$2.25</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <button
-  class="w-full mt-4 bg-gold hover:bg-gold/80 text-charcoal font-medium py-2 px-4 rounded-md transition duration-300"
-  onclick="openCanteenModal()"
->
-  View Full Menu
-</button>
-        </div>
 
 <!-- Canteen Menu Modal -->
 <div id="canteenModal" class="modal">
@@ -881,7 +976,7 @@
       <span class="close-modal" onclick="closeCanteenModal()">&times;</span>
     </div>
     <div class="modal-body">
-      <div class="bg-white rounded-lg p-6">
+      <div class="bg-white rounded-lg p-6 modal-menu-container">
         <div class="menu-item-modal">
           <div class="font-medium">Coffee</div>
           <div class="font-semibold">$1.50</div>
@@ -910,15 +1005,37 @@
           <div class="font-medium">Fruit Cup</div>
           <div class="font-semibold">$2.25</div>
         </div>
+        <div class="menu-item-modal">
+          <div class="font-medium">Fruit Cup</div>
+          <div class="font-semibold">$2.25</div>
+        </div>
+        <div class="menu-item-modal">
+          <div class="font-medium">Fruit Cup</div>
+          <div class="font-semibold">$2.25</div>
+        </div>
+        <div class="menu-item-modal">
+          <div class="font-medium">Fruit Cup</div>
+          <div class="font-semibold">$2.25</div>
+        </div>
+        <div class="menu-item-modal">
+          <div class="font-medium">Fruit Cup</div>
+          <div class="font-semibold">$2.25</div>
+        </div>
+        <div class="menu-item-modal">
+          <div class="font-medium">Fruit Cup</div>
+          <div class="font-semibold">$2.25</div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
   <!-- Blood Donor Section -->
-<div id="blood" class="feature-card bg-white rounded-lg shadow-md p-6 border-t-2 border-gold">
+<div id="blood" class="feature-card bg-offwhite/10 backdrop-blur-sm rounded-lg shadow-md p-6 border-t-2 border-gold">
   <div class="bg-brick/10 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-  <i class="fa-solid fa-droplet text-brick text-[32px]"></i>
-</div>
+    <i class="fa-solid fa-droplet text-brick text-[32px]"></i>
+  </div>
 
   <h3 class="text-xl font-semibold mb-3 text-charcoal">
     Blood Donor Network

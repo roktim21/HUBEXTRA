@@ -16,7 +16,24 @@ function openFacultyModal(department) {
   document.getElementById("facultyModal").style.display = "block";
   document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
 }
+function openAllFacultyModal() {
+  // Hide all faculty lists
+  const facultyLists = document.querySelectorAll(".faculty-list");
+  facultyLists.forEach((list) => {
+    list.classList.add("hidden");
+  });
 
+  // Show the All Faculty list
+  document.getElementById("ALL-faculty").classList.remove("hidden");
+
+  // Update the modal title
+  document.getElementById("facultyDeptTitle").textContent =
+    "All Faculty Members";
+
+  // Show the modal
+  document.getElementById("facultyModal").style.display = "block";
+  document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+}
 function closeFacultyModal() {
   document.getElementById("facultyModal").style.display = "none";
   document.body.style.overflow = "auto"; // Re-enable scrolling
@@ -297,3 +314,29 @@ function closeBloodModal() {
   document.getElementById("bloodDonorModal").style.display = "none";
   document.body.style.overflow = "auto"; // Re-enable scrolling
 }
+
+function toggleDropdown() {
+  const menu = document.getElementById("dropdownMenu");
+  menu.classList.toggle("hidden");
+}
+
+// Optional: Close dropdown when clicking outside
+document.addEventListener("click", function (e) {
+  const toggle = document.getElementById("dropdownToggle");
+  const menu = document.getElementById("dropdownMenu");
+  if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+    menu.classList.add("hidden");
+  }
+});
+
+function toggleDropdown() {
+    const dropdown = document.getElementById("dropdownMenu");
+    dropdown.classList.toggle("hidden");
+  }
+
+  // Close dropdown on item click
+  document.querySelectorAll(".dropdown-item").forEach((item) => {
+    item.addEventListener("click", function () {
+      document.getElementById("dropdownMenu").classList.add("hidden");
+    });
+  });
