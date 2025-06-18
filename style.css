@@ -2,6 +2,26 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #fdf6f0;
 }
+@keyframes textGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-textGradient {
+  background: linear-gradient(270deg, #8b2c2c, #f8f6f2, #8b2c2c);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGradient 5s ease infinite;
+}
+
 .dropdown {
   position: relative;
   display: inline-block;
