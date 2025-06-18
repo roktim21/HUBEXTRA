@@ -340,3 +340,147 @@ function toggleDropdown() {
       document.getElementById("dropdownMenu").classList.add("hidden");
     });
   });
+
+
+  // CGPA Calculator JavaScript
+function openCgpaModal() {
+  document.getElementById('cgpaCalculatorModal').style.display = 'block';
+}
+
+function closeCgpaModal() {
+  document.getElementById('cgpaCalculatorModal').style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const courseNameInput = document.getElementById('courseName');
+  const creditHoursInput = document.getElementById('creditHours');
+  const gradeSelect = document.getElementById('gradeSelect');
+  const addCourseBtn = document.getElementById('addCourseBtn');
+  const coursesList = document.getElementById('coursesList');
+  const noCourses = document.getElementById('noCourses');
+  const calculateCgpaBtn = document.getElementById('calculateCgpaBtn');
+  const resetCgpaBtn = document.getElementById('resetCgpaBtn');
+  const cgpaResult = document.getElementById('cgpaResult');
+  
+  let courses = [];
+  
+  // Add course to the list
+  addCourseBtn.addEventListener('click', function() {
+    const courseName = courseNameInput.value.trim();
+    const creditHours = parseFloat(creditHoursInput.value);
+    const gradeValue = gradeSelect.value;
+    const gradeText = gradeSelect.options[gradeSelect.selectedIndex].text;
+    
+    if (!courseName || isNaN(creditHours) || !gradeValue) {
+      alert('Please fill in all fields');
+      return;
+    }
+    
+    const course = {
+      name: courseName,
+      credits: creditHours,
+      grade: parseFloat(gradeValue),
+      gradeText: gradeText
+    };
+    
+    courses.push(course);
+    updateCoursesList();
+    
+    // Reset inputs
+    courseNameInput.value = '';
+    creditHoursInput.value = '3';
+    gradeSelect.selectedIndex = 0;
+    courseNameInput.focus();
+  });
+  
+  // Update the courses list in the table
+  function updateCoursesList() {
+    if (courses.length === 0) {
+      noCourses.style.display = 'block';
+      coursesList.innerHTML = '';
+      return;
+    }
+    
+    noCourses.style.display = 'none';
+    coursesList.innerHTML = '';
+    
+    courses.forEach((course, index) => {
+      const row = document.createElement('tr');
+      
+      // Determine grade class
+      let gradeClass = '';
+      if (course.gradeText === 'A+') gradeClass = 'grade-a-plus';
+      else if (course.gradeText === 'A') gradeClass = 'grade-a';
+      else if (course.gradeText === 'A-') gradeClass = 'grade-a-minus';
+      else if (course.gradeText === 'B+') gradeClass = 'grade-b-plus';
+      else if (course.gradeText === 'B') gradeClass = 'grade-b';
+      else if (course.gradeText === 'B-') gradeClass = 'grade-b-minus';
+      else if (course.gradeText === 'C+') gradeClass = 'grade-c-plus';
+      else if (course.gradeText === 'C') gradeClass = 'grade-c';
+      else if (course.gradeText === 'D') gradeClass = 'grade-d';
+      else if (course.gradeText === 'F') gradeClass = 'grade-f';
+      
+      row.innerHTML = `
+        <td class="py-2 px-4 text-sm">${course.name}</td>
+        <td class="py-2 px-4 text-sm text-center">${course.credits}</td>
+        <td class="py-2 px-4 text-sm text-center">
+          <span class="grade-badge ${gradeClass}">${course.gradeText}</span>
+        </td>
+        <td class="py-2 px-4 text-sm text-center">
+          <i class="fa-solid fa-trash delete-course" data-index="${index}"></i>
+        </td>
+      `;
+      
+      coursesList.appendChild(row);
+    });
+    
+    // Add event listeners to delete buttons
+    document.querySelectorAll('.delete-course').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const index = parseInt(this.getAttribute('data-index'));
+        courses.splice(index, 1);
+        updateCoursesList();
+      });
+    });
+  }
+  
+  // Calculate CGPA
+  calculateCgpaBtn.addEventListener('click', function() {
+    if (courses.length === 0) {
+      alert('Please add at least one course');
+      return;
+    }
+    
+    let totalCredits = 0;
+    let totalGradePoints = 0;
+    
+    courses.forEach(course => {
+      totalCredits += course.credits;
+      totalGradePoints += (course.grade * course.credits);
+    });
+    
+    const cgpa = totalGradePoints / totalCredits;
+    cgpaResult.textContent = cgpa.toFixed(2);
+  });
+  
+  // Reset everything
+  resetCgpaBtn.addEventListener('click', function() {
+    courses = [];
+    updateCoursesList();
+    cgpaResult.textContent = '0.00';
+    courseNameInput.value = '';
+    creditHoursInput.value = '3';
+    gradeSelect.selectedIndex = 0;
+  });
+  
+  // Initialize
+  updateCoursesList();
+});
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  const modal = document.getElementById('cgpaCalculatorModal');
+  if (event.target == modal) {
+    closeCgpaModal();
+  }
+}

@@ -37,6 +37,7 @@ body {
   display: block;
 }
 
+
 .feature-card {
   transition: all 0.3s ease;
 }
@@ -103,7 +104,88 @@ body {
 .modal-body {
   padding: 30px;
 }
+/* Additional styles for CGPA Calculator */
+.modal-content {
+  max-width: 700px;
+}
 
+#coursesTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.delete-course {
+  color: #e53e3e;
+  cursor: pointer;
+}
+
+.delete-course:hover {
+  color: #c53030;
+}
+
+#noCourses {
+  display: block;
+}
+
+/* Grade badge styles */
+.grade-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-align: center;
+  min-width: 40px;
+}
+
+.grade-a-plus {
+  background-color: #c6f6d5;
+  color: #22543d;
+}
+
+.grade-a {
+  background-color: #c6f6d5;
+  color: #22543d;
+}
+
+.grade-a-minus {
+  background-color: #c6f6d5;
+  color: #22543d;
+}
+
+.grade-b-plus {
+  background-color: #e6fffa;
+  color: #234e52;
+}
+
+.grade-b {
+  background-color: #e6fffa;
+  color: #234e52;
+}
+
+.grade-b-minus {
+  background-color: #e6fffa;
+  color: #234e52;
+}
+
+.grade-c-plus {
+  background-color: #fefcbf;
+  color: #744210;
+}
+
+.grade-c {
+  background-color: #fefcbf;
+  color: #744210;
+}
+
+.grade-d {
+  background-color: #fed7d7;
+  color: #822727;
+}
+
+.grade-f {
+  background-color: #fed7d7;
+  color: #822727;
+}
 /* Custom scrollbar for canteen menu */
 .menu-items {
   max-height: 200px; /* Reduced height to ensure scrollbar appears */
