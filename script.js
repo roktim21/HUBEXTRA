@@ -44,20 +44,21 @@ window.onclick = function (event) {
   const bloodModal = document.getElementById("bloodDonorModal");
   const canteenModal = document.getElementById("canteenModal");
   const facultyModal = document.getElementById("facultyModal");
+  const cgpaModal = document.getElementById("cgpaCalculatorModal");
 
-  if (event.target == teamModal) {
+  if (event.target === cgpaModal) {
+    closeCgpaModal();
+  }
+  if (event.target === teamModal) {
     closeTeamModal();
   }
-
-  if (event.target == bloodModal) {
+  if (event.target === bloodModal) {
     closeBloodModal();
   }
-
-  if (event.target == canteenModal) {
+  if (event.target === canteenModal) {
     closeCanteenModal();
   }
-
-  if (event.target == facultyModal) {
+  if (event.target === facultyModal) {
     closeFacultyModal();
   }
 };
@@ -475,11 +476,3 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize
   updateCoursesList();
 });
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  const modal = document.getElementById("cgpaCalculatorModal");
-  if (event.target == modal) {
-    closeCgpaModal();
-  }
-};
