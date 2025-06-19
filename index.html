@@ -688,6 +688,15 @@
         <h2 id="facultyDeptTitle" class="text-2xl font-bold">Department Faculty</h2>
         <span class="close-modal" onclick="closeFacultyModal()">&times;</span>
       </div>
+      <div class="mb-6">
+  <input
+    type="text"
+    id="facultySearch"
+    placeholder="Search faculty by name or email..."
+    class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-maroon"
+    oninput="searchFaculty()"
+  />
+</div>
       <div class="modal-body">
         <!-- CSE Faculty -->
         <div id="CSE-faculty" class="faculty-list hidden">
@@ -726,6 +735,7 @@
               <span>+. </span>
             </div>
           </div>
+
           <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
             <h3 class="text-xl font-bold">Dr. Ahammad Hossain</h3>
             <p class="text-lg font-medium text-maroon">Associate Professor</p>
@@ -743,7 +753,8 @@
               <span>+. </span>
             </div>
           </div>
-                   <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
+
+            <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
             <h3 class="text-xl font-bold">Sania Zahan</h3>
             <p class="text-lg font-medium text-maroon">Assistant Professor</p>
             <hr class="my-3">
@@ -760,7 +771,8 @@
               <span>+. </span>
             </div>
           </div>
-                   <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
+
+          <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
             <h3 class="text-xl font-bold">Md. Mizanur Rahman</h3>
             <p class="text-lg font-medium text-maroon">Assistant Professor</p>
             <hr class="my-3">
@@ -777,7 +789,8 @@
               <span>+. </span>
             </div>
           </div>
-                   <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
+
+          <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
             <h3 class="text-xl font-bold">Umme Rumman</h3>
             <p class="text-lg font-medium text-maroon">Assistant Professor</p>
             <hr class="my-3">
@@ -794,7 +807,8 @@
               <span>+. </span>
             </div>
           </div>
-                   <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
+
+          <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
             <h3 class="text-xl font-bold">Mst. Jannatul Ferdous</h3>
             <p class="text-lg font-medium text-maroon">Assistant Professor</p>
             <hr class="my-3">
@@ -810,9 +824,10 @@
               <i class="fa-solid fa-phone"></i>
               <span>+. </span>
             </div>
-          </div>di
+          </div>
+
            <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
-                      <h3 class="text-xl font-bold">Monika Kabir</h3>
+            <h3 class="text-xl font-bold">Monika Kabir</h3>
             <p class="text-lg font-medium text-maroon">Assistant Professor</p>
             <hr class="my-3">
             <div class="flex items-start gap-3 mb-2">
@@ -1492,7 +1507,7 @@
             </div>
           </div>
           <div class="faculty-card bg-white rounded-lg p-6 mb-4 shadow-sm">
-                    <h3 class="text-xl font-bold">MIffat Farhana</h3>
+          <h3 class="text-xl font-bold">MIffat Farhana</h3>
             <p class="text-lg font-medium text-maroon">Lecturer (on Probation)</p>
             <hr class="my-3">
             <div class="flex items-start gap-3 mb-2">

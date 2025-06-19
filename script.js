@@ -44,7 +44,22 @@ document.addEventListener("DOMContentLoaded", function () {
   // Start the animation
   setTimeout(animateText, 500);
 });
+function searchFaculty() {
+  const input = document.getElementById("facultySearch").value.toLowerCase();
+  const cards = document.querySelectorAll(".faculty-card");
 
+  cards.forEach((card) => {
+    const name = card.querySelector("h3, h5")?.textContent.toLowerCase() || "";
+    const emailSpan = card.querySelector("span");
+    const email = emailSpan ? emailSpan.textContent.toLowerCase() : "";
+
+    if (name.includes(input) || email.includes(input)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
 // Modal
 function openFacultyModal(department) {
   // Hide all faculty lists
@@ -82,10 +97,6 @@ function openAllFacultyModal() {
   document.getElementById("facultyModal").style.display = "block";
   document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
 }
-function closeFacultyModal() {
-  document.getElementById("facultyModal").style.display = "none";
-  document.body.style.overflow = "auto"; // Re-enable scrolling
-}
 
 window.onclick = function (event) {
   const teamModal = document.getElementById("teamModal");
@@ -107,7 +118,16 @@ window.onclick = function (event) {
     closeCanteenModal();
   }
   if (event.target === facultyModal) {
-    closeFacultyModal();
+    facultyModal.style.display = "none";
+    document.body.style.overflow = "auto";
+
+    // Clear the search input
+    document.getElementById("facultySearch").value = "";
+
+    // Show all faculty cards again
+    document.querySelectorAll(".faculty-card").forEach((card) => {
+      card.style.display = "block";
+    });
   }
 };
 
