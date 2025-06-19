@@ -21,7 +21,26 @@ body {
   -webkit-text-fill-color: transparent;
   animation: textGradient 5s ease infinite;
 }
+/* Typing animation */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
 
+.typing-cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+}
+
+.animate-textGradient {
+  animation: textGradient 6s infinite;
+  color: white;
+}
 .dropdown {
   position: relative;
   display: inline-block;

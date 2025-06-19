@@ -1,3 +1,51 @@
+// Typing animation
+document.addEventListener("DOMContentLoaded", function () {
+  const text = "Your digital portal for university life.";
+  const typingTextElement = document.getElementById("typing-text");
+  let i = 0;
+  const typingSpeed = 100; // milliseconds per character
+  const deleteSpeed = 50; // milliseconds per character when deleting
+  const pauseBeforeDelete = 2000; // pause before starting to delete
+  const pauseBeforeRestart = 1000; // pause before restarting typing
+  let isDeleting = false;
+
+  function animateText() {
+    // Typing forward
+    if (!isDeleting && i < text.length) {
+      typingTextElement.textContent += text.charAt(i);
+      i++;
+      setTimeout(animateText, typingSpeed);
+      return;
+    }
+
+    // Pause before deleting
+    if (!isDeleting && i >= text.length) {
+      isDeleting = true;
+      setTimeout(animateText, pauseBeforeDelete);
+      return;
+    }
+
+    // Deleting
+    if (isDeleting && i > 0) {
+      i--;
+      typingTextElement.textContent = text.substring(0, i);
+      setTimeout(animateText, deleteSpeed);
+      return;
+    }
+
+    // Pause before restarting
+    if (isDeleting && i <= 0) {
+      isDeleting = false;
+      setTimeout(animateText, pauseBeforeRestart);
+      return;
+    }
+  }
+
+  // Start the animation
+  setTimeout(animateText, 500);
+});
+
+// Modal
 function openFacultyModal(department) {
   // Hide all faculty lists
   const facultyLists = document.querySelectorAll(".faculty-list");
