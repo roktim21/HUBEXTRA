@@ -397,33 +397,39 @@ document.addEventListener("click", function (e) {
   }
 });
 
+// Dropdown
 function toggleDropdown() {
   const dropdown = document.getElementById("dropdownMenu");
-  const isHidden = dropdown.classList.toggle("hidden");
+  const toggleBtn = document.getElementById("dropdownToggle");
 
-  const close = () => {
+  const isVisible = !dropdown.classList.contains("hidden");
+
+  if (isVisible) {
     dropdown.classList.add("hidden");
-    document.removeEventListener("click", onClickOutside);
-    window.removeEventListener("scroll", close);
-  };
-
-  function onClickOutside(e) {
-    const toggle = document.getElementById("dropdownToggle");
-    if (!dropdown.contains(e.target) && !toggle.contains(e.target)) close();
+    document.removeEventListener("click", handleOutsideClick);
+    document.removeEventListener("scroll", closeOnScroll, true);
+  } else {
+    dropdown.classList.remove("hidden");
+    setTimeout(() => {
+      document.addEventListener("click", handleOutsideClick);
+      document.addEventListener("scroll", closeOnScroll, true);
+    }, 0);
   }
 
-  if (!isHidden) {
-    document.addEventListener("click", onClickOutside);
-    window.addEventListener("scroll", close, { passive: true });
+  function handleOutsideClick(e) {
+    if (!dropdown.contains(e.target) && !toggleBtn.contains(e.target)) {
+      dropdown.classList.add("hidden");
+      document.removeEventListener("click", handleOutsideClick);
+      document.removeEventListener("scroll", closeOnScroll, true);
+    }
+  }
+
+  function closeOnScroll() {
+    dropdown.classList.add("hidden");
+    document.removeEventListener("click", handleOutsideClick);
+    document.removeEventListener("scroll", closeOnScroll, true);
   }
 }
-
-// Close dropdown on item click
-document.querySelectorAll(".dropdown-item").forEach((item) => {
-  item.addEventListener("click", function () {
-    document.getElementById("dropdownMenu").classList.add("hidden");
-  });
-});
 
 // CGPA Calculator JavaScript
 function openCgpaModal() {
