@@ -388,11 +388,6 @@ function closeBloodModal() {
   document.body.style.overflow = "auto"; // Re-enable scrolling
 }
 
-function toggleDropdown() {
-  const menu = document.getElementById("dropdownMenu");
-  menu.classList.toggle("hidden");
-}
-
 // Optional: Close dropdown when clicking outside
 document.addEventListener("click", function (e) {
   const toggle = document.getElementById("dropdownToggle");
@@ -404,7 +399,23 @@ document.addEventListener("click", function (e) {
 
 function toggleDropdown() {
   const dropdown = document.getElementById("dropdownMenu");
-  dropdown.classList.toggle("hidden");
+  const isHidden = dropdown.classList.toggle("hidden");
+
+  const close = () => {
+    dropdown.classList.add("hidden");
+    document.removeEventListener("click", onClickOutside);
+    window.removeEventListener("scroll", close);
+  };
+
+  function onClickOutside(e) {
+    const toggle = document.getElementById("dropdownToggle");
+    if (!dropdown.contains(e.target) && !toggle.contains(e.target)) close();
+  }
+
+  if (!isHidden) {
+    document.addEventListener("click", onClickOutside);
+    window.addEventListener("scroll", close, { passive: true });
+  }
 }
 
 // Close dropdown on item click
