@@ -688,15 +688,17 @@
         <h2 id="facultyDeptTitle" class="text-2xl font-bold">Department Faculty</h2>
         <span class="close-modal" onclick="closeFacultyModal()">&times;</span>
       </div>
-      <div class="mb-6">
+      <div class="mb-6 flex items-center border border-gray-300 rounded-lg shadow-sm p-2 focus-within:ring-2 focus-within:ring-maroon">
+  <i class="fa-solid fa-magnifying-glass text-gray-500 ml-2"></i>
   <input
     type="text"
     id="facultySearch"
     placeholder="Search faculty by name or email..."
-    class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-maroon"
+    class="flex-grow p-2 focus:outline-none"
     oninput="searchFaculty()"
   />
 </div>
+
       <div class="modal-body">
         <!-- CSE Faculty -->
         <div id="CSE-faculty" class="faculty-list hidden">
