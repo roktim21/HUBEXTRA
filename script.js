@@ -79,6 +79,10 @@ function openFacultyModal(department) {
   document.getElementById("facultyModal").style.display = "block";
   document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
 }
+function closeFacultyModal() {
+  document.getElementById("facultyModal").style.display = "none";
+  document.body.style.overflow = "auto"; // Re-enable scrolling
+}
 function openAllFacultyModal() {
   // Hide all faculty lists
   const facultyLists = document.querySelectorAll(".faculty-list");
