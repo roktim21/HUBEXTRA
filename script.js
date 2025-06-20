@@ -450,6 +450,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const calculateCgpaBtn = document.getElementById("calculateCgpaBtn");
   const resetCgpaBtn = document.getElementById("resetCgpaBtn");
   const cgpaResult = document.getElementById("cgpaResult");
+  const motivationalMessage = document.getElementById("motivationalMessage");
 
   let courses = [];
 
@@ -550,6 +551,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const cgpa = totalGradePoints / totalCredits;
     cgpaResult.textContent = cgpa.toFixed(2);
+
+    // Show motivational message below CGPA
+    if (cgpa >= 3.75) {
+      motivationalMessage.textContent = `🌟 Excellent! Your CGPA is ${cgpa.toFixed(
+        2
+      )} — Keep up the outstanding work! 🚀`;
+    } else if (cgpa >= 3.0) {
+      motivationalMessage.textContent = `👍 Good job! Your CGPA is ${cgpa.toFixed(
+        2
+      )} — Keep pushing to reach higher! 💪`;
+    } else if (cgpa >= 2.0) {
+      motivationalMessage.textContent = `🙂 Your CGPA is ${cgpa.toFixed(
+        2
+      )} — Stay focused, improvement is within reach! 🎯`;
+    } else {
+      motivationalMessage.textContent = `⚠️ Your CGPA is ${cgpa.toFixed(
+        2
+      )} — Don't give up! Seek help and keep trying! 💡`;
+    }
   });
 
   // Reset everything
@@ -557,6 +577,7 @@ document.addEventListener("DOMContentLoaded", function () {
     courses = [];
     updateCoursesList();
     cgpaResult.textContent = "0.00";
+    motivationalMessage.textContent = "";
     courseNameInput.value = "";
     creditHoursInput.value = "3";
     gradeSelect.selectedIndex = 0;
